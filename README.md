@@ -1,2 +1,3 @@
-# typing_test
- A simple typing test to calculate your WPM
+# Typing Test
+
+A simple typing test to calculate your WPM
