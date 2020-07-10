@@ -16,8 +16,6 @@ var firstTime = true;
 // listeners
 wordsCont.innerText = randomWords[currentWordIndex];
 
-console.log(randomWords.join(" "))
-
 document.onkeypress = function (e) {
     if (currentWordIndex < 25) {
         if (firstTime) {
