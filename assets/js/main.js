@@ -3,6 +3,7 @@ const lightTheme = document.querySelector(".light-theme");
 const darkTheme = document.querySelector(".dark-theme");
 const sakuraTheme = document.querySelector(".sakura-theme");
 
+const highscoreText = document.querySelector(".highscore");
 const inputArea = document.querySelector(".input-area");
 const wordsCont = document.querySelector(".words");
 const mistakesText = document.querySelector(".mistakes");
@@ -16,6 +17,12 @@ var currentWordIndex = 0;
 var correctAmount = 0;
 var incorrectAmount = 0;
 var firstTime = true;
+
+var savedHighscore = localStorage.getItem("highscore");
+
+if (savedHighscore == null) {
+    localStorage.setItem("highscore", 0)
+}
 
 // listeners
 loadData()
@@ -50,9 +57,16 @@ document.onkeypress = function (e) {
 
                 var wpm = 25 / (totalTime / 60000);
 
-                wpmText.innerText = `speed: ${Math.floor(wpm)} wpm`;
+                wpm = Math.floor(wpm);
+
+                wpmText.innerText = `speed: ${wpm} wpm`;
 
                 wordsCont.innerText = "done!";
+
+                if (wpm > savedHighscore) {
+                    localStorage.setItem("highscore", wpm)
+                    highscoreText.innerText = `highscore: ${wpm} wpm`
+                }
             }
         }
     }
@@ -68,5 +82,9 @@ function loadData() {
     var savedThemeName = localStorage.getItem("themeName");
     document.documentElement.className = savedThemeName;
 
-    var savedHighscore = localStorage.getItem("highscore");
+    if (savedHighscore == 0) {
+        highscoreText.innerText = `highscore: ∞ wpm`
+    } else {
+        highscoreText.innerText = `highscore: ${savedHighscore} wpm`
+    }
 }
