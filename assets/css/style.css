@@ -1,10 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #3f3f3f;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(255, 183, 197, 0.75);
 }
 
 *:focus {
@@ -14,35 +16,41 @@ body {
 .container {
     margin: 25vh auto 0 auto;
     text-align: center;
-    background-color: #5a5a5a;
+    background-color: #ffb7c5;
     border-radius: 25px;
     width: 500px;
     height: 200px;
+    box-shadow: 0 0 10px 0 rgb(255, 183, 197, 0.8);
 }
 
 .words {
-    padding-top: 30px;
+    padding-top: 20px;
     margin: auto;
     width: 350px;
     height: 60px;
     text-align: left;
+    color: rgb(0, 0, 0, 0.75);
 }
 
 .input-area {
-    margin-top: 20px;
-    height: 25px;
-    width: 100px;
+    margin-top: 25px;
+    height: 35px;
+    width: 115px;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 35px;
     border-style: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
 }
 
 .stats-cont {
-    margin: 15px auto 0 auto;
-    width: 200px;
+    margin: 20px auto 0 auto;
+    width: 400px;
     height: 25px;
+    color: rgb(0, 0, 0, 0.75);
 }
 
 .stats-cont p {
     display: inline;
+    padding: 0 15px 0 15px;
 }
