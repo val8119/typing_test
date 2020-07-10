@@ -14,7 +14,9 @@ var incorrectAmount = 0;
 var firstTime = true;
 
 // listeners
-wordsCont.innerText = randomWords.join(" ");
+wordsCont.innerText = randomWords[currentWordIndex];
+
+console.log(randomWords.join(" "))
 
 document.onkeypress = function (e) {
     if (currentWordIndex < 25) {
@@ -24,15 +26,17 @@ document.onkeypress = function (e) {
             startDate = +new Date();
         }
         if (e.keyCode === 32) {
-            userWords.push(inputArea.value.replace(/\s/g, '')); // add to userWords array without spaces
-            inputArea.value = ""; // clear input area
+            userWords.push(inputArea.value.replace(/\s/g, ''));
+            inputArea.value = "";
 
             if (userWords[currentWordIndex] != randomWords[currentWordIndex]) {
                 incorrectAmount++;
-                mistakesText.innerHTML = `Mistakes: ${incorrectAmount}`;
+                mistakesText.innerHTML = `mistakes: ${incorrectAmount}`;
             }
 
             currentWordIndex++; // index + 1
+
+            wordsCont.innerText = randomWords[currentWordIndex];
 
             if (currentWordIndex === 25) {
                 endDate = +new Date();
@@ -41,9 +45,11 @@ document.onkeypress = function (e) {
 
                 console.log(totalTime);
 
-                var wpm = 25 * totalTime;
+                var wpm = 25 / (totalTime / 60000);
 
-                wpmText.innerText = `Speed: ${wpm} WPM`;
+                wpmText.innerText = `speed: ${Math.floor(wpm)} wpm`;
+
+                wordsCont.innerText = "done!";
             }
         }
     }

@@ -18,22 +18,24 @@ body {
     text-align: center;
     background-color: #ffb7c5;
     border-radius: 25px;
-    width: 500px;
-    height: 200px;
-    box-shadow: 0 0 10px 0 rgb(255, 183, 197, 0.8);
+    width: 300px;
+    height: 150px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .words {
     padding-top: 20px;
     margin: auto;
-    width: 350px;
-    height: 60px;
+    width: 100px;
+    height: 30px;
     text-align: left;
     color: rgb(0, 0, 0, 0.75);
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 
 .input-area {
-    margin-top: 25px;
+    margin-top: 5px;
     height: 35px;
     width: 115px;
     text-align: center;
@@ -41,16 +43,18 @@ body {
     border-style: none;
     background-color: rgba(255, 255, 255, 0.5);
     color: black;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .stats-cont {
     margin: 20px auto 0 auto;
-    width: 400px;
-    height: 25px;
     color: rgb(0, 0, 0, 0.75);
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 
 .stats-cont p {
     display: inline;
     padding: 0 15px 0 15px;
+    text-align: center;
 }
