@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,20 @@
 <body>
     <div class="container">
         <p class="words"></p>
-        <input type="text" class="input-area">
+        <input type="text" class="input-area" spellcheck="false">
         <div class="stats-cont">
             <p class="mistakes">mistakes: 0</p>
             <p class="wpm">speed: ∞ wpm</p>
+            <p class="highscore">highscore: 124 wpm</p>
         </div>
     </div>
+    <footer class="footer">
+        <a href="#" class="dark-theme" onclick="changeTheme('theme-light')">light</a>
+        <p>-</p>
+        <a href="#" class="light-theme" onclick="changeTheme('theme-dark')">dark</a>
+        <p>-</p>
+        <a href="#" class="sakura-theme" onclick="changeTheme('theme-sakura')">sakura</a>
+    </footer>
     <script src="assets/js/main.js"></script>
 </body>
 

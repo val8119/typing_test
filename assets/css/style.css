@@ -4,9 +4,33 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.theme-light {
+    --color-primary: #fffefe;
+    --color-secondary: #ffffff;
+    --color-accent: #ffffff;
+    --font-color: #000000;
+    --input-color: #000000;
+}
+
+.theme-dark {
+    --color-primary: #262829;
+    --color-secondary: #2a2c2d;
+    --color-accent: #353738;
+    --font-color: #ffffff;
+    --input-color: #ffffff;
+}
+
+.theme-sakura {
+    --color-primary: #fdc0cc;
+    --color-secondary: #ffb7c5bf;
+    --color-accent: #ffffff80;
+    --font-color: #000000bf;
+    --input-color: #000000;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(255, 183, 197, 0.75);
+    background-color: var(--color-secondary);
 }
 
 *:focus {
@@ -16,10 +40,10 @@ body {
 .container {
     margin: 25vh auto 0 auto;
     text-align: center;
-    background-color: #ffb7c5;
+    background-color: var(--color-primary);
     border-radius: 25px;
     width: 300px;
-    height: 150px;
+    height: 170px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -29,7 +53,7 @@ body {
     width: 100px;
     height: 30px;
     text-align: left;
-    color: rgb(0, 0, 0, 0.75);
+    color: var(--font-color);
     text-align: center;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
@@ -41,20 +65,36 @@ body {
     text-align: center;
     border-radius: 35px;
     border-style: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
+    background-color: var(--color-accent);
+    color: var(--input-color);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .stats-cont {
-    margin: 20px auto 0 auto;
-    color: rgb(0, 0, 0, 0.75);
+    margin: 11px auto 0 auto;
+    color: var(--font-color);
     text-align: center;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 
 .stats-cont p {
-    display: inline;
+    display: flex;
     padding: 0 15px 0 15px;
     text-align: center;
+    justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+}
+
+.footer a,
+.footer p {
+    display: inline;
+    text-decoration: none;
+    opacity: 0.5;
+    color: var(--font-color);
 }

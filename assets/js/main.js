@@ -1,4 +1,8 @@
 // selectors
+const lightTheme = document.querySelector(".light-theme");
+const darkTheme = document.querySelector(".dark-theme");
+const sakuraTheme = document.querySelector(".sakura-theme");
+
 const inputArea = document.querySelector(".input-area");
 const wordsCont = document.querySelector(".words");
 const mistakesText = document.querySelector(".mistakes");
@@ -14,16 +18,17 @@ var incorrectAmount = 0;
 var firstTime = true;
 
 // listeners
+loadData()
+
 wordsCont.innerText = randomWords[currentWordIndex];
 
 document.onkeypress = function (e) {
     if (currentWordIndex < 25) {
         if (firstTime) {
-            console.log("first time");
             firstTime = false;
             startDate = +new Date();
         }
-        if (e.keyCode === 32) {
+        if (e.keyCode === 32 && inputArea.value.replace(/\s/g, '') != "") {
             userWords.push(inputArea.value.replace(/\s/g, ''));
             inputArea.value = "";
 
@@ -52,3 +57,16 @@ document.onkeypress = function (e) {
         }
     }
 };
+
+// functions
+function changeTheme(themeName) {
+    document.documentElement.className = themeName;
+    localStorage.setItem("themeName", themeName);
+}
+
+function loadData() {
+    var savedThemeName = localStorage.getItem("themeName");
+    document.documentElement.className = savedThemeName;
+
+    var savedHighscore = localStorage.getItem("highscore");
+}
