@@ -48,5 +48,3 @@ document.onkeypress = function (e) {
         }
     }
 };
-
-// functions
